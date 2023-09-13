@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 220, 220, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+
+body {
+    background: linear-gradient(
+            to bottom,
+            rgb(var(--background-start-rgb)),
+            rgb(var(--background-end-rgb))
+    ) no-repeat;
+}
+
+/*Shared Classes*/
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.btn {
+  @apply border border-black border-2 bg-transparent py-1.5 px-5 hover:bg-black hover:text-white text-black transition-all text-center rounded-lg text-lg font-bold flex items-center justify-center;
+}
+
+.modal {
+    @apply flex-center fixed top-1/2 left-1/2 h-16 w-52 right-auto bottom-auto text-2xl mr-[-50%] transform -translate-x-1/2 -translate-y-1/2 text-gray-100 rounded-lg;
+}
+
+/* Nav Component */
+.logo-text {
+  @apply max-sm:hidden font-satoshi font-semibold text-lg text-blue-800 tracking-wider;
+}
+
+/*Home Page*/
+.head-text {
+  @apply text-3xl font-extrabold leading-[1.15] text-black sm:text-4xl;
+}
+
+.orange-gradient {
+  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+
+.games {
+  @apply flex-center mt-4 mx-auto w-full max-w-xl gap-4;
+}
+
+.game-card {
+    @apply flex-1 w-full rounded-lg border-2 border-gray-300 bg-white/20 p-4 pb-4 md:w-44 md:h-52;
+}
+
+/*TicTacToe Component*/
+.ttt-square {
+    @apply flex-1 rounded-md bg-gray-400 w-24 h-24 lg:w-44 lg:h-44;
+}
+
+.ttt-square.x{
+    @apply bg-blue-600;
+}
+
+.ttt-square.o{
+    @apply bg-red-800;
+}
+
+.ttt-results{
+    @apply flex flex-col ml-8 mt-8 mb-8 lg:ml-32 lg:mt-24 lg:mb-32 items-center text-xl;
+}
+
+.ttt-result{
+    @apply flex flex-auto gap-10 text-center;
+}
+
+.ttt-result-title{
+    @apply flex-center rounded-full bg-blue-900 text-gray-100 w-24 h-10;
+}
+
+.ttt-result-value{
+    @apply flex-center rounded-full bg-blue-900 text-gray-100 w-16 h-10;
+}
+
+.btn.game-over{
+    @apply pointer-events-none;
+}
+
+.toggle-title{
+    @apply rounded-full bg-blue-900 text-gray-100 w-24 h-10;
+}
+
+.toggle-button{
+    @apply flex items-center relative border-0 rounded-full cursor-pointer text-white w-22 h-8;
+}
+
+.toggle-button.easy {
+    @apply bg-green-600 justify-start pl-3;
+}
+
+.toggle-button.hard {
+    @apply bg-red-700 justify-end pr-3;
+}
+
+.toggle-button .slider{
+    @apply absolute top-0 h-6 w-6 rounded-full bg-gray-200 content-[''];
+}
+
+.toggle-button.hard .slider {
+    @apply left-1 top-1;
+}
+
+.toggle-button.easy .slider {
+    @apply top-1 left-[calc(100%-1.75rem)];
+}
+
+.modal.x,
+.modal.win{
+    @apply bg-green-600;
+}
+
+.modal.o,
+.modal.loss{
+    @apply bg-red-700;
+}
+
+.modal.tie{
+    @apply bg-amber-700;
+}
+
+/*Hangman Component*/
+.yes-no-modal{
+    @apply bg-gray-600  h-36 w-72 text-xl text-center;
+}
+
+.modal-btn{
+    @apply border border-white border-2 rounded-lg p-1 hover:bg-gray-50 hover:text-gray-600;
+}
+
+.header{
+    @apply flex-center text-2xl font-bold text-blue-700;
+}
+
+.charSpace{
+    @apply h-14 w-16 md:h-20 md:w-20 border-b m-2 lg:m-4 text-center text-2xl;
+}
+
+.charSpace.incorrect {
+ @apply bg-red-400;
+}
+
+.charSpace.correct {
+ @apply bg-green-600;
+}
+
+.charSpace.misplaced {
+ @apply bg-yellow-300;
+}
+
+.hangman-note-block{
+    @apply hidden bg-gray-500 fixed inset-0 top-0 left-0 w-full h-full;
+}
+
+.hangman-note2{
+    @apply hidden absolute top-1/2 left-1/2 p-2 border rounded shadow-md bg-blue-100;
+}
+
+.note-modal{
+    @apply flex-col bg-blue-200 h-96 w-96 text-base justify-evenly text-center text-black p-2 border-2 border-blue-800;
+}
+
+.note-list{
+    @apply list-square pl-6 pr-4;
+}
+
